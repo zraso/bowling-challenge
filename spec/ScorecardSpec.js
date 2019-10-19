@@ -1,13 +1,36 @@
 describe('Scorecard', function() {
-  var scorecard;
+  var frame;
 
   beforeEach(function() {
-    scorecard = new Scorecard();
+    frame = new Frame();
   });
 
-  describe('keeps total', function(){
-    it('total starts at 0', function() {
-      expect(scorecard.total).toEqual(0)
+  describe('keeps total', function () {
+    it('total starts at 0', function () {
+      expect(frame.total).toEqual(0);
+    });
+
+    it('increases when a ball is rolled', function () {
+      for (let i=0; i<5; i++) { frame.roll(3); }
+      expect(frame.total).toEqual(15);
+    });
+  });
+
+  describe('roll', function () {
+    it('logs roll number', function () {
+      frame.roll();
+      expect(frame.rollNumber).toEqual(1);
+    });
+
+    it('logs first roll score', function () {
+      frame.roll(5);
+      expect(frame.firstScore).toEqual(5);
+    });
+
+    it('logs second roll score', function () {
+      frame.roll(5);
+      frame.roll(3);
+      expect(frame.secondScore).toEqual(3);
     });
   });
 });
