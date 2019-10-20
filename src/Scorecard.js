@@ -6,5 +6,6 @@ function Scorecard() {
 
 Scorecard.prototype.getFrameTotal = function (frame) {
   this.frameTotals.push(frame.total);
-  return this.frameTotals
+  const array = this.frameTotals;
+  return array.slice(-1).pop();
 };
