@@ -9,8 +9,8 @@ describe('Scorecard', function() {
   describe('frame scores', function () {
     it('collects score after each frame', function () {
       frame = new Frame;
-      frame.roll(5);
-      frame.roll(3);
+      frame.firstRoll(5);
+      frame.secondRoll(3);
       expect(scorecard.getFrameTotal(frame)).toEqual(8);
     });
   });

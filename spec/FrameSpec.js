@@ -11,33 +11,33 @@ describe('Frame', function() {
     });
 
     it('increases when a ball is rolled', function () {
-      for (let i=0; i<5; i++) { frame.roll(3); }
+      for (let i=0; i<5; i++) { frame.firstRoll(3); }
       expect(frame.total).toEqual(15);
     });
   });
 
   describe('roll', function () {
     it('logs roll number', function () {
-      frame.roll();
+      frame.firstRoll();
       expect(frame.rollNumber).toEqual(1);
     });
 
     it('logs first roll score', function () {
-      frame.roll(5);
+      frame.firstRoll(5);
       expect(frame.firstScore).toEqual(5);
     });
 
     it('logs second roll score', function () {
-      frame.roll(5);
-      frame.roll(3);
+      frame.firstRoll(5);
+      frame.secondRoll(3);
       expect(frame.secondScore).toEqual(3);
     });
   });
 
   describe('frameStatus', function() {
     it('when normal round, logs complete when two rolls have been made', function(){
-      frame.roll(3);
-      frame.roll(5);
+      frame.firstRoll(3);
+      frame.secondRoll(5);
       expect(frame.status).toEqual('complete');
     });
   });

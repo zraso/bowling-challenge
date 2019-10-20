@@ -4,8 +4,21 @@ function Frame() {
   this.firstScore = 0;
   this.secondScore = 0;
   this.status = 'incomplete';
+}
 
-Frame.prototype.roll = function (knockedPins) {
+Frame.prototype.firstRoll = function (knockedPins) {
+  this.rollNumber += 1;
+  this.total += knockedPins;
+
+  if (knockedPins < 10) {
+    this.firstScore += knockedPins
+  }
+  else {
+    this.firstScore += knockedPins
+  }
+};
+
+Frame.prototype.secondRoll = function (knockedPins) {
   this.rollNumber += 1;
   this.total += knockedPins;
 
@@ -16,4 +29,3 @@ Frame.prototype.roll = function (knockedPins) {
     this.secondScore += knockedPins
   }
 };
-}
