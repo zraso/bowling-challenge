@@ -34,12 +34,15 @@ describe('Frame', function() {
     });
   });
 
-  describe('frameStatus', function() {
+  describe('status', function() {
     it('when normal round, logs complete when two rolls have been made', function(){
       frame.firstRoll(3);
       frame.secondRoll(5);
       expect(frame.status).toEqual('complete');
     });
   });
+
+
+
 
 });

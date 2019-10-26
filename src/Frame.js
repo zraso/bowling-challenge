@@ -1,7 +1,7 @@
-function Frame() {
+function Frame(number) {
   this.total = 0;
-  this.index = 1;
   this.rollNumber = 0;
+  this.number = number;
   this.scores = [];
   this.status = 'incomplete';
 }
@@ -31,3 +31,7 @@ Frame.prototype.secondRoll = function (knockedPins) {
     this.status = 'complete';
   }
 };
+//can we do the logic with just one roll method?
+//can we use the roll number to make sure it doesn't go over limit of rolls
+// eg if this.rollNumber = 1 && blah, then secondRoll()
+//need to do some front end to get this to work
